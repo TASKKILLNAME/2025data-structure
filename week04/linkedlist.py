@@ -21,5 +21,3 @@ ll = LinkedList()
 ll.append(8)
 ll.append(10)
 ll.append(-9)
-
-
