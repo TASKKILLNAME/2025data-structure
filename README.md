@@ -1,1 +1,1 @@
-2025 1학기 데이터 베이스 Written in Python
+2025 1학기 자료구조 Written in Python
