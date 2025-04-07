@@ -1,5 +1,4 @@
 from ctypes.wintypes import tagMSG
-import random
 
 class Node:
     def __init__(self, data, link= None):
@@ -28,6 +27,21 @@ class LinkedList:
                 current = current.link
         return f"{target}을 찾지 못하였습니다."
 
+    def remove(self, target):
+        current = self.head
+        if self.head.data == target:
+            self.head = self.head.link
+            current.link = None
+            return
+        previous = None
+        while current:
+            if current.data == target:
+                previous.link = current.link
+                current.link = None
+                return
+            previous = current
+            current = current.link
+
     def __str__(self):
         node = self.head
         result = ""
@@ -40,13 +54,21 @@ class LinkedList:
         return result
 
 ll = LinkedList()
-
-for _ in range(20):
-    j = random.randint(1, 30)
-    ll.append(j)
-
+ll.append(1)
+ll.append(5)
+ll.append(8)
 print(ll)
-print(ll.search(10))
+ll.remove(1)
+ll.remove(5)
+ll.remove(8)
+ll.append(10)
+ll.append(-9)
+print(ll.search(-9))
+print(ll)
+ll.remove(-9)
+print(ll)
+print(ll.search(-9))
+
 
 
 
