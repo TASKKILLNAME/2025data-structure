@@ -20,6 +20,7 @@ class Stack:
             return "pop from empty stack"
         popped_node = self.top
         self.top = self.top.link
+        popped_node.link = None
         return popped_node.data
 
 
